@@ -1,0 +1,251 @@
+
+
+/* =========================================
+   PACKAGES SECTION (scoped to wrapper)
+   All selectors are prefixed with .top-destinations-wrapper
+   ========================================= */
+
+.top-destinations-wrapper .packages .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.top-destinations-wrapper .packages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.top-destinations-wrapper .package-card.horizontal {
+    display: flex;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.top-destinations-wrapper .package-card.horizontal:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transform: translateY(-5px);
+}
+
+.top-destinations-wrapper .pkg-image {
+    flex: 0 0 400px;
+    overflow: hidden;
+}
+
+.top-destinations-wrapper .pkg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.top-destinations-wrapper .package-card.horizontal:hover .pkg-image img {
+    transform: scale(1.05);
+}
+
+.top-destinations-wrapper .pkg-details {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+@media (max-width: 767.98px){
+    .top-destinations-wrapper .pkg-details {
+        padding: 16px;
+    }
+}
+
+.top-destinations-wrapper .pkg-meta {
+    color: #777;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.top-destinations-wrapper .pkg-meta i {
+    color: var(--accent-color);
+    margin-right: 5px;
+}
+
+.top-destinations-wrapper .pkg-details h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 767.98px){
+    .top-destinations-wrapper .pkg-details h3 {
+        font-size: 18px;
+    }
+}
+
+.top-destinations-wrapper .pkg-details p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.top-destinations-wrapper .pkg-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.top-destinations-wrapper .pkg-price {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.top-destinations-wrapper .btn-text {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.top-destinations-wrapper .btn-text:hover {
+    color: var(--accent-color);
+}
+
+/* Offcanvas styles (scoped) */
+.top-destinations-wrapper #td-offcanvas {
+    position: fixed;
+    inset: 0;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 9999;
+    pointer-events: none;
+    transition: opacity .28s ease, visibility .28s ease;
+}
+.top-destinations-wrapper #td-offcanvas.open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+.top-destinations-wrapper #td-offcanvas .td-offcanvas-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    transition: opacity .28s ease;
+}
+.top-destinations-wrapper #td-offcanvas.open .td-offcanvas-backdrop {
+    opacity: 1;
+}
+.top-destinations-wrapper #td-offcanvas .td-offcanvas-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 420px;
+    max-width: 100%;
+    background: #fff;
+    box-shadow: -20px 0 40px rgba(0,0,0,0.08);
+    padding: 24px;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform .32s cubic-bezier(.2,.9,.2,1);
+    will-change: transform;
+}
+.top-destinations-wrapper #td-offcanvas.open .td-offcanvas-panel {
+    transform: translateX(0);
+}
+.top-destinations-wrapper #td-offcanvas .td-offcanvas-close {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    font-size: 1.4rem;
+    line-height: 1;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+.top-destinations-wrapper #td-offcanvas .offcanvas-hero img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 16px;
+}
+.top-destinations-wrapper #td-offcanvas .offcanvas-body h2 {
+    margin-top: 0;
+}
+.top-destinations-wrapper #td-offcanvas .offcanvas-body .price {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin: 12px 0;
+}
+
+.top-destinations-wrapper #td-offcanvas .offcanvas-body {
+    overflow-y: auto;
+    max-height: calc(100vh - 220px);
+}
+
+.top-destinations-wrapper .offcanvas-actions {
+    display: flex;
+    gap: 10px;
+    margin: 16px 0 8px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.top-destinations-wrapper .offcanvas-actions .btn {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+    flex: 0 0 auto;
+}
+.top-destinations-wrapper .offcanvas-actions .btn-itinerary {
+    background: #f5f5f5;
+    color: #222;
+    border: 1px solid var(--border-color);
+}
+.top-destinations-wrapper .offcanvas-actions .btn-whatsapp {
+    background: #25D366;
+    color: #fff;
+}
+
+@media (max-width: 420px){
+    .top-destinations-wrapper .offcanvas-actions {
+        flex-wrap: wrap;
+    }
+    .top-destinations-wrapper .offcanvas-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 767.98px){
+    .top-destinations-wrapper #td-offcanvas .td-offcanvas-panel {
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        transform: translateY(100%);
+        transition: transform .32s cubic-bezier(.2,.9,.2,1);
+    }
+    .top-destinations-wrapper #td-offcanvas.open .td-offcanvas-panel {
+        transform: translateY(0);
+    }
+    .top-destinations-wrapper #td-offcanvas .td-offcanvas-close {
+        right: 14px;
+        top: 14px;
+    }
+}

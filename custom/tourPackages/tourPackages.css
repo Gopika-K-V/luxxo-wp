@@ -1,0 +1,286 @@
+/* ============================================
+   TOUR PACKAGES SECTION
+   ============================================ */
+   
+/* =========================================
+   PACKAGES SECTION
+   ========================================= */
+
+.packages .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.packages .packages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Desktop package-card stack. The modifier is added only when supported by JS. */
+@media (min-width: 1024px) {
+    .packages .packages-list--stacking {
+        gap: clamp(88px, 10vh, 150px);
+        padding-bottom: clamp(88px, 10vh, 150px);
+    }
+
+    .packages .packages-list--stacking .package-card.horizontal {
+        box-shadow: 0 18px 38px rgba(0, 0, 0, 0.12);
+        position: sticky;
+        top: calc(104px + (1 * 20px));
+        transform: translateZ(0) scale(var(--package-stack-scale));
+        transform-origin: center top;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        will-change: transform;
+        z-index: calc(10 + var(--package-stack-index));
+    }
+
+    .packages .packages-list--stacking .package-card.horizontal:hover {
+        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
+        transform: translateY(-5px) translateZ(0) scale(var(--package-stack-scale));
+    }
+}
+
+.packages .package-card.horizontal {
+    display: flex;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.packages .package-card.horizontal:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transform: translateY(-5px);
+}
+
+.packages .pkg-image {
+    flex: 0 0 400px;
+    overflow: hidden;
+}
+
+.packages .pkg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.packages .package-card.horizontal:hover .pkg-image img {
+    transform: scale(1.05);
+}
+
+.packages .pkg-details {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    @media (max-width: 767.98px){
+        padding: 16px;
+    }
+}
+
+.packages .pkg-meta {
+    color: #777;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.pkg-meta i {
+    color: var(--accent-color);
+    margin-right: 5px;
+}
+
+.pkg-details h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    @media (max-width: 767.98px){
+        font-size: 18px;
+    }
+}
+
+.pkg-details p {
+    color: #555;
+    margin-bottom: 25px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+}
+
+.pkg-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.pkg-price {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.btn-text {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-text:hover {
+    color: var(--accent-color);
+}
+.tour-packages {
+  max-width: 1400px;
+  margin: 0 auto 4rem;
+}
+
+.packages-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+}
+
+@media (max-width: 1499.98px) {
+  .packages-grid {
+  padding: 0 5%;
+  }
+}
+@media (max-width: 991.98px) {
+  .packages-grid {
+    row-gap: 30px;
+  }
+}
+.package-intro {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 320px;
+  flex: 0 0 320px;
+  max-width: 320px;
+  background: linear-gradient(135deg, #8fa9ba, #a8bfce);
+  padding: 3rem;
+  border-radius: 15px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@media (max-width: 991.98px) {
+  .package-intro {
+    padding: 32px;
+  }
+}
+.package-intro h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.package-intro p {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 991.98px) {
+  .package-intro p {
+    margin: 0;
+  }
+}
+.browse-btn {
+  background-color: rgba(44, 62, 80, 0.8);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.packageSwiper {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  max-width: calc(100% - 350px);
+}
+
+@media (max-width: 991.98px) {
+  .packageSwiper {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+.package-card {
+  background-color: #4a4b4d;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.package-image {
+  position: relative;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.package-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.package-content {
+  background-color: #4a4b4d;
+  padding: 1.5rem;
+  color: white;
+}
+
+.package-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.package-description {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0;
+}

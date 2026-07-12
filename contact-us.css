@@ -1,0 +1,220 @@
+.luxxo-contact-page {
+    --contact-ink: #121212;
+    --contact-muted: #6f6a61;
+    --contact-gold: #c9a24d;
+    --contact-cream: #f7f3ea;
+    --contact-line: rgba(18, 18, 18, 0.1);
+    background: #fff;
+    color: var(--contact-ink);
+}
+
+.luxxo-contact-hero {
+    position: relative;
+    min-height: clamp(360px, 52vw, 620px);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #111;
+    background-position: center;
+    background-size: cover;
+}
+
+.luxxo-contact-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.28)),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.08));
+}
+
+.luxxo-contact-hero__inner {
+    position: relative;
+    z-index: 1;
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 96px 0;
+    color: #fff;
+}
+
+.luxxo-contact-hero__eyebrow {
+    max-width: 720px;
+    margin: 0 0 18px;
+    font-size: clamp(0.88rem, 1.6vw, 1rem);
+    line-height: 1.7;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.luxxo-contact-hero__title {
+    max-width: 800px;
+    margin: 0;
+    color: #FFF;
+    font-size: clamp(2.65rem, 7vw, 5.9rem);
+    line-height: 0.98;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.luxxo-contact-main {
+    padding: clamp(64px, 8vw, 112px) 0;
+    background:
+        linear-gradient(180deg, #fff 0%, #fff 56%, var(--contact-cream) 56%, var(--contact-cream) 100%);
+}
+
+.luxxo-contact-wrap {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    gap: clamp(28px, 5vw, 72px);
+    align-items: stretch;
+}
+
+.luxxo-contact-info,
+.luxxo-contact-map {
+    border: 1px solid var(--contact-line);
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 26px 70px rgba(19, 18, 15, 0.08);
+}
+
+.luxxo-contact-info {
+    padding: clamp(28px, 4vw, 48px);
+}
+
+.luxxo-contact-list {
+    display: grid;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.luxxo-contact-item {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--contact-line);
+}
+
+.luxxo-contact-item:last-child {
+    border-bottom: 0;
+}
+
+.luxxo-contact-item__icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(201, 162, 77, 0.36);
+    border-radius: 50%;
+    color: var(--contact-gold);
+    background: rgba(201, 162, 77, 0.08);
+}
+
+.luxxo-contact-item__content,
+.luxxo-contact-item__content a {
+    color: var(--contact-ink);
+    font-size: clamp(1rem, 1.5vw, 1.08rem);
+    line-height: 1.72;
+    overflow-wrap: anywhere;
+    transition: color 0.25s ease;
+}
+
+.luxxo-contact-item__content a:hover {
+    color: var(--contact-gold);
+}
+
+.luxxo-contact-map {
+    min-height: 520px;
+    overflow: hidden;
+    position: relative;
+}
+
+.luxxo-contact-map iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: saturate(0.9) contrast(1.03);
+}
+
+.luxxo-contact-social {
+    padding: clamp(26px, 4vw, 40px) 0;
+    background: #0b0b0b;
+}
+
+.luxxo-contact-social__inner {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: clamp(14px, 3vw, 28px);
+    flex-wrap: wrap;
+}
+
+.luxxo-contact-social__link {
+    width: clamp(54px, 7vw, 68px);
+    height: clamp(54px, 7vw, 68px);
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 50%;
+    color: #fff;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.luxxo-contact-social__link i {
+    font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+}
+
+.luxxo-contact-social__link svg {
+    width: clamp(24px, 3vw, 30px);
+    height: clamp(24px, 3vw, 30px);
+    fill: currentColor;
+}
+
+.luxxo-contact-social__link:hover,
+.luxxo-contact-social__link:focus-visible {
+    border-color: rgba(201, 162, 77, 0.72);
+    background: rgba(201, 162, 77, 0.16);
+    color: var(--contact-gold);
+}
+
+@media (max-width: 991.98px) {
+    .luxxo-contact-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .luxxo-contact-map {
+        min-height: 420px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .luxxo-contact-hero__inner,
+    .luxxo-contact-wrap,
+    .luxxo-contact-social__inner {
+        width: min(100% - 28px, 1180px);
+    }
+
+    .luxxo-contact-item {
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .luxxo-contact-item__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .luxxo-contact-map {
+        min-height: 340px;
+    }
+}
