@@ -53,19 +53,69 @@
 	}
 }
 
-.current-offers__card {
+ .current-offers__card {
+	
+	/*background: var(--current-offers-card);
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	border-radius: 24px;
+	box-shadow: 0 12px 22px rgba(0, 0, 0, 0.18);
+	color: var(--current-offers-ink);
+	overflow: hidden;
+	position: relative;
+
+
+	/* background: rgb(255 255 255 / 14%);
+	backdrop-filter: blur(18px) saturate(180%);
+	-webkit-backdrop-filter: blur(18px) saturate(180%);
+	border: 1px solid rgb(255 255 255 / 42%);
+	box-shadow: inset 0 1px 1px rgb(255 255 255 / 45%), inset 0 -1px 1px rgb(255 255 255 / 12%), 0 8px 32px rgb(0 0 0 / 28%); 
+	color: #fff;*/
+
+
+	
+	/* border-radius: 30px;
 	backdrop-filter: blur(13px);
-	background: rgb(107 107 107 / 25%);
+	background: rgba(255, 255, 255, 0.28);
+	border-color: rgba(255, 255, 255, 0.58);
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22); */
+
+
+	/* backdrop-filter: blur(13px);
+	background: rgba(255, 255, 255, 0.28);
+	border-color: rgba(255, 255, 255, 0.58);
+	color: #fff; */
+
+	/* background: var(--current-offers-card);
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(13px);
+	background: rgba(255, 255, 255, 0.28);
 	border: 1px solid rgba(255, 255, 255, 0.58);
 	border-radius: 24px;
+	box-shadow: 0 12px 16px rgb(0 0 0 / 7%);
+	color: var(--current-offers-ink);
 	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
 	color: #fff;
 	display: flex;
 	overflow: hidden;
 	position: relative;
-	transition: box-shadow 0.25s ease, transform 0.25s ease;
+	transition: box-shadow 0.25s ease, transform 0.25s ease; */
+
+
+	color: #fff;
+
+
+	background: #000000;
+	border-radius: 24px;
+	
+
+	display: flex;
+	isolation: isolate;
+	overflow: hidden;
 	position: relative;
-}
+	transition: box-shadow 0.25s ease, transform 0.25s ease;
+} 
+
+
 
 .current-offers__card:hover {
 	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.28);
@@ -80,21 +130,8 @@
 }
 
 .current-offers__background {
-	height: 100%;
-	left: 0;
-	object-fit: cover;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: 0;
-}
-
-.current-offers__background + .current-offers__content::before {
-	background: rgba(255, 255, 255, 0.72);
-	content: '';
-	inset: 0;
-	position: absolute;
-	z-index: -1;
+	/* The reference glass blurs the hero behind the card, not a separate image. */
+	display: none;
 }
 
 .current-offers__content {
@@ -221,7 +258,7 @@
 		top:0;
 		height: 100%;
 		width: 100%;
-		z-index: 1;SS
+		z-index: 1;
 	}
 }
 
