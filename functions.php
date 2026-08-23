@@ -19,6 +19,12 @@
 	wp_enqueue_style('tourPackages-css', get_template_directory_uri() . '/custom/tourPackages/tourPackages.css');
 	wp_enqueue_style('experience-css', get_template_directory_uri() . '/custom/experienceSection/experience.css');
 	wp_enqueue_style('experienceSlider-css', get_template_directory_uri() . '/custom/experienceSlider/experienceSlider.css');
+	wp_enqueue_style(
+		'google-reviews-css',
+		get_template_directory_uri() . '/custom/googleReviews/googleReviews.css',
+		array(),
+		filemtime( get_template_directory() . '/custom/googleReviews/googleReviews.css' )
+	);
 	wp_enqueue_style('aboutSection-css', get_template_directory_uri() . '/custom/aboutSection/aboutSection.css');
     // Set the title tag
     add_theme_support('title-tag');

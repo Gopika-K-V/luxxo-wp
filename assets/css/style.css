@@ -580,8 +580,8 @@ body a {
    ============================================ */
 .booking-steps {
   max-width: 1400px;
-  margin: 0 auto 4rem;
-  padding: 0 5%;
+  margin: 0 auto;
+  padding: clamp(56px, 8vw, 96px) 5%;
 }
 
 .booking-steps h2 {

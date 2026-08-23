@@ -22,11 +22,9 @@
 @media (min-width: 1024px) {
     .packages .packages-list--stacking {
         gap: clamp(88px, 10vh, 150px);
-        padding-bottom: clamp(88px, 10vh, 150px);
     }
 
     .packages .packages-list--stacking .package-card.horizontal {
-        box-shadow: 0 18px 38px rgba(0, 0, 0, 0.12);
         position: sticky;
         top: calc(104px + (1 * 20px));
         transform: translateZ(0) scale(var(--package-stack-scale));
@@ -37,7 +35,6 @@
     }
 
     .packages .packages-list--stacking .package-card.horizontal:hover {
-        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
         transform: translateY(-5px) translateZ(0) scale(var(--package-stack-scale));
     }
 }
@@ -50,7 +47,6 @@
 }
 
 .packages .package-card.horizontal:hover {
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
     transform: translateY(-5px);
 }
 

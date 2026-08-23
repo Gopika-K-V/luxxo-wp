@@ -22,6 +22,9 @@
 <!--TOUR PACKAGES -->
 <?php include get_template_directory() . '/custom/tourPackages/tourPackages.php'; ?>
 
+<!-- GOOGLE REVIEWS -->
+<?php include get_template_directory() . '/custom/googleReviews/googleReviews.php'; ?>
+
 
 <!--BOOKING STEPS -->
 <section class="booking-steps">

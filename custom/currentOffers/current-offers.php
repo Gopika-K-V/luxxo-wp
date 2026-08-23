@@ -181,10 +181,12 @@ $is_single_offer = 1 === count($current_offers);
 								<?php endif; ?>
 								<?php if (! empty($button) && $is_linked_card) : ?>
 									<span class="current-offers__cta" aria-hidden="true">
+										<span class="current-offers__cta-label"><?php echo esc_html($button); ?></span>
 										<span class="current-offers__arrow"></span>
 									</span>
 								<?php elseif (! empty($button)) : ?>
 									<a class="current-offers__cta" href="<?php echo esc_url($cta_url); ?>" target="<?php echo esc_attr('_blank' === $cta_target ? '_blank' : '_self'); ?>"<?php echo '_blank' === $cta_target ? ' rel="noopener noreferrer"' : ''; ?> aria-label="<?php echo esc_attr($button); ?>">
+										<span class="current-offers__cta-label"><?php echo esc_html($button); ?></span>
 										<span class="current-offers__arrow" aria-hidden="true"></span>
 									</a>
 								<?php endif; ?>
