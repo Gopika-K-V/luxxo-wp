@@ -1,0 +1,631 @@
+/* Package Detail template only — no global selectors are used here. */
+.luxxo-package-detail {
+    --lp-forest: #02241d;
+    --lp-gold: #d4af37;
+    --lp-paper: #faf9f7;
+    --lp-muted: #59625f;
+    background: var(--lp-paper);
+    color: #1a1c1b;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    overflow-x: clip;
+}
+
+.nav-menu a.luxxo-package-active {
+    color: var(--lp-forest, #02241d);
+    font-weight: 700;
+    border-bottom: 2px solid var(--lp-gold, #d4af37);
+}
+
+.luxxo-package-container {
+    width: min(100% - 48px, 1280px);
+    margin-inline: auto;
+}
+
+.luxxo-package-hero {
+    min-height: clamp(430px, 55vw, 660px);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    isolation: isolate;
+    background: #34534b;
+    color: #fff;
+}
+
+.luxxo-package-hero__image,
+.luxxo-package-hero__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.luxxo-package-hero__image {
+    object-fit: cover;
+    z-index: -2;
+}
+
+.luxxo-package-hero__overlay {
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(2, 36, 29, .08) 20%, rgba(2, 36, 29, .84) 100%), linear-gradient(90deg, rgba(2, 36, 29, .58), transparent 75%);
+}
+
+.luxxo-package-hero__content {
+    padding: 0 0 clamp(50px, 7vw, 88px);
+}
+
+.luxxo-package-hero h1 {
+    max-width: 780px;
+    margin: 0 0 14px;
+    color: #fff;
+    font-size: clamp(2.35rem, 5vw, 4rem);
+    font-weight: 750;
+    letter-spacing: -.045em;
+    line-height: 1.08;
+}
+
+.luxxo-package-hero p {
+    max-width: 630px;
+    margin: 0;
+    font-size: clamp(.95rem, 1.5vw, 1.1rem);
+    line-height: 1.65;
+}
+
+.luxxo-package-meta-wrap {
+    position: relative;
+    z-index: 2;
+    margin-top: -40px;
+}
+
+.luxxo-package-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 26px 32px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 7px 24px rgba(26, 58, 50, .09);
+}
+
+.luxxo-package-meta__item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    padding: 0 22px;
+    border-left: 1px solid #eceae5;
+}
+
+.luxxo-package-meta__item:first-child {
+    border-left: 0;
+    padding-left: 0;
+}
+
+.luxxo-package-meta__item>i {
+    color: var(--lp-gold);
+    font-size: 1.25rem;
+}
+
+.luxxo-package-meta span {
+    display: block;
+    color: #59625f;
+    font-size: .67rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.luxxo-package-meta strong {
+    display: block;
+    color: var(--lp-forest);
+    font-size: .96rem;
+    line-height: 1.45;
+}
+
+.luxxo-package-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: clamp(45px, 7vw, 100px);
+    padding-block: clamp(64px, 8vw, 110px);
+}
+
+.luxxo-package-main {
+    min-width: 0;
+}
+
+.luxxo-package-section {
+    margin-bottom: clamp(62px, 8vw, 108px);
+    padding: 0;
+}
+
+.luxxo-package-section h2,
+.luxxo-package-list-card h2,
+.luxxo-package-booking h2 {
+    margin: 0 0 20px;
+    color: var(--lp-forest);
+    font-size: clamp(1.65rem, 2.7vw, 2rem);
+    font-weight: 750;
+    letter-spacing: -.035em;
+}
+
+.luxxo-package-prose {
+    max-width: 760px;
+    color: #444b49;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.luxxo-package-prose p:last-child {
+    margin-bottom: 0;
+}
+
+.luxxo-package-booking {
+    align-self: start;
+}
+
+@media (min-width: 1201px) {
+    .luxxo-package-booking {
+        position: sticky;
+        top: 130px;
+    }
+}
+
+.luxxo-package-booking__card {
+    padding: 28px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 7px 24px rgba(26, 58, 50, .09);
+}
+
+.luxxo-package-booking h2 {
+    margin-bottom: 7px;
+    font-size: 1.35rem;
+}
+
+.luxxo-package-booking__card>p {
+    margin: 0 0 20px;
+    color: var(--lp-muted);
+    font-size: .8rem;
+    line-height: 1.55;
+}
+
+.luxxo-package-booking form {
+    display: grid;
+    gap: 13px;
+}
+
+.luxxo-package-booking label {
+    color: #4d5553;
+    font-size: .65rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.luxxo-package-booking input {
+    display: block;
+    width: 100%;
+    height: 44px;
+    margin-top: 5px;
+    padding: 0 12px;
+    border: 1px solid #d7d9d4;
+    border-radius: 0;
+    background: #fff;
+    color: #202422;
+    font: 400 .8rem "Plus Jakarta Sans", sans-serif;
+}
+
+.luxxo-package-booking input:focus {
+    border-color: var(--lp-forest);
+    outline: 2px solid rgba(2, 36, 29, .16);
+    outline-offset: 1px;
+}
+
+.luxxo-package-booking button,
+.luxxo-package-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 45px;
+    border-radius: 0;
+    font: 700 .88rem "Plus Jakarta Sans", sans-serif;
+    text-decoration: none;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.luxxo-package-booking button {
+    margin-top: 2px;
+    border: 1px solid var(--lp-forest);
+    background: var(--lp-forest);
+    color: #fff;
+}
+
+.luxxo-package-whatsapp {
+    margin-top: 11px;
+    gap: 8px;
+    border: 1px solid var(--lp-gold);
+    color: var(--lp-forest);
+}
+
+.luxxo-package-booking button:hover,
+.luxxo-package-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(2, 36, 29, .14);
+}
+
+.luxxo-package-booking button:focus-visible,
+.luxxo-package-whatsapp:focus-visible {
+    outline: 3px solid rgba(212, 175, 55, .55);
+    outline-offset: 3px;
+}
+
+.luxxo-package-timeline {
+    position: relative;
+}
+
+.luxxo-package-timeline::before {
+    position: absolute;
+    top: 18px;
+    bottom: 18px;
+    left: 50%;
+    width: 1px;
+    background: #d7ddd9;
+    content: "";
+    transform: translateX(-50%);
+}
+
+.luxxo-package-timeline::after {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    width: 2px;
+    height: var(--timeline-progress, 0%);
+    background: var(--lp-gold);
+    content: "";
+    transform: translateX(-50%);
+    transition: height 1s ease;
+}
+
+.luxxo-package-itinerary__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(35px, 7vw, 90px);
+    min-height: 260px;
+    padding: 0 0 clamp(50px, 7vw, 85px);
+}
+
+.luxxo-package-itinerary__dot {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border: 3px solid var(--lp-paper);
+    border-radius: 50%;
+    background: #c9cfca;
+    box-shadow: 0 0 0 1px #d7ddd9;
+    transform: translateX(-50%);
+    transition: background .3s ease, box-shadow .3s ease;
+}
+
+.luxxo-package-itinerary__item.is-active .luxxo-package-itinerary__dot {
+    background: var(--lp-gold);
+    box-shadow: 0 0 0 1px var(--lp-gold), 0 0 0 6px rgba(212, 175, 55, .12);
+}
+
+.luxxo-package-itinerary__content,
+.luxxo-package-itinerary__image {
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s cubic-bezier(.2, .75, .25, 1);
+}
+
+.is-left .luxxo-package-itinerary__content {
+    grid-column: 1;
+    text-align: right;
+    transform: translateX(-28px);
+}
+
+.is-left .luxxo-package-itinerary__image {
+    grid-column: 2;
+    grid-row: 1;
+    transform: translateX(28px);
+}
+
+.is-right .luxxo-package-itinerary__content {
+    grid-column: 2;
+    grid-row: 1;
+    transform: translateX(28px);
+}
+
+.is-right .luxxo-package-itinerary__image {
+    grid-column: 1;
+    transform: translateX(-28px);
+}
+
+.luxxo-package-itinerary__item.is-active .luxxo-package-itinerary__content,
+.luxxo-package-itinerary__item.is-active .luxxo-package-itinerary__image {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.luxxo-package-itinerary__content h3 {
+    margin: 0 0 8px;
+    color: var(--lp-forest);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.luxxo-package-itinerary__content p {
+    margin: 0;
+    color: var(--lp-muted);
+    font-size: .86rem;
+    line-height: 1.65;
+}
+
+.luxxo-package-itinerary__eyebrow {
+    margin-bottom: 6px !important;
+    color: #85651d !important;
+    font-size: .65rem !important;
+    font-weight: 800;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.luxxo-package-itinerary__location {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 9px !important;
+    color: #466257 !important;
+    font-size: .75rem !important;
+}
+
+.is-left .luxxo-package-itinerary__location {
+    justify-content: flex-end;
+}
+
+.luxxo-package-itinerary__image {
+    min-height: 205px;
+    overflow: hidden;
+    border-radius: 0;
+    background: #e4e6e3;
+}
+
+.luxxo-package-itinerary__image img {
+    width: 100%;
+    height: 100%;
+    min-height: 205px;
+    object-fit: cover;
+}
+
+.luxxo-package-inclusions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding: 0;
+    margin-bottom: clamp(62px, 8vw, 108px);
+}
+
+.luxxo-package-list-card {
+    min-height: 180px;
+    padding: 26px;
+    border: 1px solid #e0e1dc;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.luxxo-package-list-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.is-included h2 i {
+    color: #548954;
+}
+
+.is-excluded h2 i {
+    color: #b7524c;
+}
+
+.luxxo-package-list-card ul {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.luxxo-package-list-card li {
+    position: relative;
+    padding-left: 15px;
+    color: var(--lp-muted);
+    font-size: .8rem;
+    line-height: 1.55;
+}
+
+.luxxo-package-list-card li::before {
+    position: absolute;
+    left: 0;
+    color: var(--lp-gold);
+    content: "•";
+}
+
+.is-excluded li::before {
+    color: #a4aaa6;
+    content: "×";
+}
+
+.luxxo-package-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.luxxo-package-gallery figure {
+    aspect-ratio: 3/4;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 9px;
+    background: #e3e4e1;
+}
+
+.luxxo-package-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .45s ease;
+}
+
+.luxxo-package-gallery figure:hover img {
+    transform: scale(1.06);
+}
+
+.luxxo-package-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity .6s ease, transform .6s cubic-bezier(.2, .75, .25, 1);
+}
+
+.luxxo-package-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.luxxo-package-hero .luxxo-package-reveal:nth-child(2) {
+    transition-delay: .12s;
+}
+
+@media (max-width:900px) {
+    .luxxo-package-layout {
+        grid-template-columns: minmax(0, 1fr) 290px;
+        gap: 38px;
+    }
+
+    .luxxo-package-booking__card {
+        padding: 22px;
+    }
+
+    .luxxo-package-meta {
+        padding-inline: 22px;
+    }
+
+    .luxxo-package-meta__item {
+        padding-inline: 14px;
+    }
+}
+
+@media (max-width:700px) {
+    .luxxo-package-container {
+        width: min(100% - 32px, 1280px);
+    }
+
+    .luxxo-package-hero {
+        min-height: 440px;
+    }
+
+    .luxxo-package-meta-wrap {
+        margin-top: -22px;
+    }
+
+    .luxxo-package-meta {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 20px;
+    }
+
+    .luxxo-package-meta__item,
+    .luxxo-package-meta__item:first-child {
+        padding: 0;
+        border: 0;
+    }
+
+    .luxxo-package-layout {
+        display: flex;
+        flex-direction: column;
+        padding-block: 54px;
+        gap: 0;
+    }
+
+    .luxxo-package-booking {
+        position: static;
+        order: -1;
+        width: 100%;
+        margin-bottom: 54px;
+    }
+
+    .luxxo-package-booking__card {
+        padding: 24px;
+    }
+
+    .luxxo-package-section {
+        margin-bottom: 58px;
+    }
+
+    .luxxo-package-timeline::before,
+    .luxxo-package-timeline::after {
+        left: 5px;
+    }
+
+    .luxxo-package-itinerary__item {
+        display: block;
+        min-height: 0;
+        padding: 0 0 42px 28px;
+    }
+
+    .luxxo-package-itinerary__dot {
+        left: 5px;
+    }
+
+    .luxxo-package-itinerary__content,
+    .is-left .luxxo-package-itinerary__content,
+    .is-right .luxxo-package-itinerary__content {
+        text-align: left;
+        transform: translateX(20px);
+    }
+
+    .luxxo-package-itinerary__item.is-active .luxxo-package-itinerary__content {
+        transform: none;
+    }
+
+    .is-left .luxxo-package-itinerary__location {
+        justify-content: flex-start;
+    }
+
+    .luxxo-package-itinerary__image,
+    .is-left .luxxo-package-itinerary__image,
+    .is-right .luxxo-package-itinerary__image {
+        margin-top: 18px;
+        transform: translateX(20px);
+    }
+
+    .luxxo-package-itinerary__item.is-active .luxxo-package-itinerary__image {
+        transform: none;
+    }
+
+    .luxxo-package-inclusions {
+        grid-template-columns: 1fr;
+    }
+
+    .luxxo-package-gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .luxxo-package-detail * {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
+
+    .luxxo-package-reveal,
+    .luxxo-package-itinerary__content,
+    .luxxo-package-itinerary__image {
+        opacity: 1;
+        transform: none;
+    }
+}

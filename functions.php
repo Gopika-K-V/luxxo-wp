@@ -69,6 +69,33 @@ function enqueue_scripts() {
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
+/** Assets used only by the reusable package detail page template. */
+function luxxo_enqueue_package_detail_assets() {
+    if ( ! is_page_template( 'page-package-detail.php' ) ) {
+        return;
+    }
+
+    $theme_dir = get_template_directory();
+    $theme_uri = get_template_directory_uri();
+
+    wp_enqueue_style(
+        'luxxo-package-detail',
+        $theme_uri . '/assets/css/package-detail.css',
+        array( 'main-style' ),
+        filemtime( $theme_dir . '/assets/css/package-detail.css' )
+    );
+    wp_enqueue_script(
+        'luxxo-package-detail',
+        $theme_uri . '/assets/js/package-detail.js',
+        array(),
+        filemtime( $theme_dir . '/assets/js/package-detail.js' ),
+        true
+    );
+}
+add_action( 'wp_enqueue_scripts', 'luxxo_enqueue_package_detail_assets' );
+
+require_once get_template_directory() . '/custom/packageDetail/package-detail-acf.php';
+
 
 
 
