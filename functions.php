@@ -26,6 +26,9 @@
 		filemtime( get_template_directory() . '/custom/googleReviews/googleReviews.css' )
 	);
 	wp_enqueue_style('aboutSection-css', get_template_directory_uri() . '/custom/aboutSection/aboutSection.css');
+	
+	wp_enqueue_style('package-page-css', get_template_directory_uri() . '/assets/css/package-detail.css');
+	
     // Set the title tag
     add_theme_support('title-tag');
 
@@ -64,37 +67,18 @@ function enqueue_scripts() {
         wp_get_theme()->get('Version'),
         true
     );
+    // Enqueue Package JS
+    wp_enqueue_script(
+        'package-detail-js',
+        get_template_directory_uri() . '/assets/js/package-detail.js',
+        array('jquery'),
+        wp_get_theme()->get('Version'),
+        true
+    );
 
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
-
-/** Assets used only by the reusable package detail page template. */
-function luxxo_enqueue_package_detail_assets() {
-    if ( ! is_page_template( 'page-package-detail.php' ) ) {
-        return;
-    }
-
-    $theme_dir = get_template_directory();
-    $theme_uri = get_template_directory_uri();
-
-    wp_enqueue_style(
-        'luxxo-package-detail',
-        $theme_uri . '/assets/css/package-detail.css',
-        array( 'main-style' ),
-        filemtime( $theme_dir . '/assets/css/package-detail.css' )
-    );
-    wp_enqueue_script(
-        'luxxo-package-detail',
-        $theme_uri . '/assets/js/package-detail.js',
-        array(),
-        filemtime( $theme_dir . '/assets/js/package-detail.js' ),
-        true
-    );
-}
-add_action( 'wp_enqueue_scripts', 'luxxo_enqueue_package_detail_assets' );
-
-require_once get_template_directory() . '/custom/packageDetail/package-detail-acf.php';
 
 
 

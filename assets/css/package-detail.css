@@ -459,10 +459,9 @@
     content: "×";
 }
 
-.luxxo-package-gallery__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+.luxxo-package-gallery__slider {
+    overflow:hidden;
+    padding-bottom:26px;
 }
 
 .luxxo-package-gallery figure {
@@ -482,6 +481,21 @@
 
 .luxxo-package-gallery figure:hover img {
     transform: scale(1.06);
+}
+
+.luxxo-package-gallery__progress {
+    top:auto!important;
+    bottom:0!important;
+    height:2px!important;
+    background:#dde2de!important;
+}
+
+.luxxo-package-gallery__progress .swiper-pagination-progressbar-fill {
+    background:var(--lp-gold)!important;
+}
+
+.luxxo-package-gallery__progress.swiper-pagination-lock {
+    display:none;
 }
 
 .luxxo-package-reveal {
@@ -610,9 +624,6 @@
         grid-template-columns: 1fr;
     }
 
-    .luxxo-package-gallery__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (prefers-reduced-motion:reduce) {

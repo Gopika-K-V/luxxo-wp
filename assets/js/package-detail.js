@@ -14,6 +14,23 @@
         var revealItems = page.querySelectorAll('.luxxo-package-reveal');
         var itinerary = page.querySelector('.luxxo-package-timeline');
         var days = page.querySelectorAll('.luxxo-package-itinerary__item');
+        var gallery = page.querySelector('.luxxo-package-gallery__slider');
+
+        if (gallery && typeof Swiper !== 'undefined') {
+            new Swiper(gallery, {
+                slidesPerView: 1.25,
+                spaceBetween: 12,
+                watchOverflow: true,
+                pagination: {
+                    el: gallery.querySelector('.swiper-pagination'),
+                    type: 'progressbar'
+                },
+                breakpoints: {
+                    701: { slidesPerView: 3, spaceBetween: 12 },
+                    1100: { slidesPerView: 4, spaceBetween: 12 }
+                }
+            });
+        }
 
         function showAll() {
             revealItems.forEach(function (item) { item.classList.add('is-visible'); });
