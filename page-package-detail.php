@@ -59,7 +59,30 @@ $contact_url = home_url( '/contact-us/' );
             <?php $gallery = function_exists( 'get_field' ) ? get_field( 'package_gallery' ) : array(); if ( $gallery ) : ?><section class="luxxo-package-section luxxo-package-gallery luxxo-package-reveal"><h2>Visualise Your Journey</h2><div class="luxxo-package-gallery__slider swiper"><div class="swiper-wrapper"><?php foreach ( $gallery as $gallery_image ) : $gallery_id = $image_id( $gallery_image ); if ( $gallery_id ) : $gallery_alt = get_post_meta( $gallery_id, '_wp_attachment_image_alt', true ); ?><figure class="swiper-slide"><button class="luxxo-package-gallery__trigger" type="button" data-gallery-src="<?php echo esc_url( wp_get_attachment_image_url( $gallery_id, 'full' ) ); ?>" data-gallery-alt="<?php echo esc_attr( $gallery_alt ); ?>" aria-label="View image: <?php echo esc_attr( $gallery_alt ?: 'Gallery image' ); ?>"><?php echo wp_get_attachment_image( $gallery_id, 'large', false, array( 'loading' => 'lazy' ) ); ?></button></figure><?php endif; endforeach; ?></div><div class="luxxo-package-gallery__progress swiper-pagination" aria-label="Gallery progress"></div></div></section><?php endif; ?>
         </div>
 
-        <aside class="luxxo-package-booking" aria-label="Package enquiry"><div class="luxxo-package-booking__card"><h2>Book This Journey</h2><p><?php echo esc_html( $booking_description ); ?></p><form action="<?php echo esc_url( $contact_url ); ?>" method="get"><input type="hidden" name="package" value="<?php echo esc_attr( $title ); ?>"><label>Name<input type="text" name="name" autocomplete="name" placeholder="Your full name" required></label><label>Email<input type="email" name="email" autocomplete="email" placeholder="Your email address" required></label><label>Travel Date<input type="date" name="travel_date"></label><button type="submit">Enquire Now</button></form><a class="luxxo-package-whatsapp" href="https://wa.me/<?php echo esc_attr( $whatsapp_number ); ?>?text=<?php echo rawurlencode( $whatsapp_message ); ?>" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i>WhatsApp Us</a></div></aside>
+        <aside class="luxxo-package-booking" aria-label="Package enquiry">
+            <div class="luxxo-package-booking__card">
+                <h2>Book This Journey</h2>
+                <p><?php echo esc_html( $booking_description ); ?></p>
+                <!--<form action="<?php echo esc_url( $contact_url ); ?>" method="get">-->
+                <!--    <input type="hidden" name="package" value="<?php echo esc_attr( $title ); ?>">-->
+                <!--    <label>Name-->
+                <!--        <input type="text" name="name" autocomplete="name" placeholder="Your full name" required>-->
+                <!--    </label>-->
+                <!--    <label>Email-->
+                <!--        <input type="email" name="email" autocomplete="email" placeholder="Your email address" required>-->
+                <!--    </label>-->
+                <!--    <label>Travel Date-->
+                <!--        <input type="date" name="travel_date">-->
+                <!--    </label>-->
+                <!--    <button type="submit">Enquire Now</button>-->
+                <!--</form>-->
+                
+                <!-- <?php echo do_shortcode( '[contact-form-7 id="5e44ea8" title="Enquiry Form"]' ); ?> -->
+                <a class="luxxo-package-whatsapp" href="https://wa.me/<?php echo esc_attr( $whatsapp_number ); ?>?text=<?php echo rawurlencode( $whatsapp_message ); ?>" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>WhatsApp Us
+                </a>
+            </div>
+        </aside>
     </div>
 </main>
 
