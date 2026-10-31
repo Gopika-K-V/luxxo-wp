@@ -105,7 +105,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <ul>
                             <li><a href="<?php echo esc_url(home_url('/')); ?>">Home</a></li>
                             <li><a href="#packages">Packages</a></li>
-                            <li><a href="#destinations">Destinations</a></li>
+                            <li><a href="/cabs">Cabs</a></li>
+                            <li><a href="/house-boats">Houseboats</a></li>
                             <li><a href="/about-us">About</a></li>
                             <li>
                                 <a href="/contact-us">
